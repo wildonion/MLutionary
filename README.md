@@ -1,4 +1,4 @@
-## 💻 Setup
+## ⚙️ Setup
 
 ```console
 pip install requirements.txt
@@ -12,7 +12,7 @@ python bfs_dr.py --chromosomes 200 --features 30 \
 				 --crossover-method multi_point --mutation-method flipping --mutation-rate 0.20
 ```
 
-## Plot of Breast Cancer Dataset Fitness Generation Process
+## 📊 Plot of Breast Cancer Dataset Fitness Generation Process
 
 <p align="center">
     <img src="https://github.com/wildonion/MLutionary-Evolver/blob/master/fitness_generation.png">
