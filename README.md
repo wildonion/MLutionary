@@ -1,10 +1,10 @@
-## Setup
+## 💻 Setup
 
 ```console
 pip install requirements.txt
 ```
 
-## Breast Canser Usage Example
+## 💻 Breast Canser Usage Example
 
 ```console
 python bfs_dr.py --chromosomes 200 --features 30 \
@@ -18,7 +18,7 @@ python bfs_dr.py --chromosomes 200 --features 30 \
     <img src="https://github.com/wildonion/MLutionary-Evolver/blob/master/fitness_generation.png">
 </p>
 
-## TODOs
+## 📌 TODOs
 
 * Add Selection Methods
 * Add Crossover Methods
