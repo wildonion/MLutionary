@@ -38,13 +38,13 @@ class population:
 		self.amount = amount
 		self.features = features
 		self.pop = [] # list of all chromosomes (solutions)
-		if not chromosomes: self.__init_pop(amount, features)
+		if not chromosomes: self.__init_pop()
 		else: self.pop = [chromosome(c) for c in chromosomes]
 	
-	def __init_pop(self, amount, features):
-		for i in range(amount):
-			c = np.ones(features, dtype=np.bool)
-			c[:int(0.4*features)] = False # not all features are good! - binary representation
+	def __init_pop(self):
+		for i in range(self.amount):
+			c = np.ones(self.features, dtype=np.bool)
+			c[:int(0.4*self.features)] = False # not all features are good! - binary representation
 			np.random.shuffle(c) # shuffle all chromosomes which have the number of features (genes) in their structure in each population
 			self.pop.append(chromosome(c))
 
