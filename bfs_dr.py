@@ -17,7 +17,7 @@
 |
 | USAGE : 
 |			python bfs_dr.py --chromosomes 200 --features 30 \
-|				 			 --generation 3 --parents 10 --selection-method roulette_wheel \
+|				 			 --generation 3 --parents 10 --selection-method rank \
 |				 			 --crossover-method multi_point --mutation-method flipping --mutation-rate 0.20
 |
 |
@@ -52,9 +52,9 @@ parser.add_argument('--chromosomes', action='store', type=int, help='The number 
 parser.add_argument('--features', action='store', type=int, help='The number of total features in dataset as genes must be optimized during each generation', required=True)
 parser.add_argument('--generation', action='store', type=int, help='The number of generation', required=True)
 parser.add_argument('--parents', action='store', type=int, help='The number of parents to mate for offspring', required=True)
-parser.add_argument('--selection-method', action='store', type=str, help='Selection method for crossover operation', required=True)
-parser.add_argument('--crossover-method', action='store', type=str, help='Crossover method to generate offspring', required=True)
-parser.add_argument('--mutation-method', action='store', type=str, help='Mutation method to mutate offspring', required=True)
+parser.add_argument('--selection-method', action='store', type=str, help='Selection method for crossover operation (roulette_wheel, tournament or rank)', required=True)
+parser.add_argument('--crossover-method', action='store', type=str, help='Crossover method to generate offspring (single_point, two_point or multi_point)', required=True)
+parser.add_argument('--mutation-method', action='store', type=str, help='Mutation method to mutate offspring (flipping, reversing or interchanging)', required=True)
 parser.add_argument('--mutation-rate', action='store', type=float, help='Mutation rate', required=True)
 args = parser.parse_args()
 
