@@ -1,7 +1,7 @@
 ## ⚙️ Setup
 
 ```console
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 💻 Breast Canser Usage Example
