@@ -135,13 +135,12 @@ class genetic_process:
 		population_next_generation = []
 		if self.selection_method == "roulette_wheel":
 			fitness_population = sum(self.population.fitness_score(self.model, self.data)[0]) # sum of all scores (fitnesses)
-			individual_expected_values = [c.fitness(self.model, self.data)/fitness_population for c in self.population] # all chromosomes prob (exprected values)
+			individual_expected_values = [(1/c.fitness(self.model, self.data))/fitness_population for c in self.population] # all chromosomes prob (exprected values) - we scaled up every chromosome fitness cause big roulette of the wheel belongs to minimum fitnesses
 			cum_prob = [sum(individual_expected_values[:i+1]) for i in range(len(individual_expected_values))] # cumulative sum of chromosomes exprected values (prob)
 			for i in range(self.parents):
 				r = random.random()
-				for j, chromosome in enumerate(self.population):
-					if cum_prob[j] >= r:
-						population_next_generation.append(self.population[j].genes)
+				if cum_prob[i] >= r:
+					population_next_generation.append(self.population[i].genes)
 			self.parents_population = population_next_generation
 		elif self.selection_method == "rank": # because the population after fitness is sorted in descending order we know that always the first n chromosomes of population are the best ones so it doesn't matter how many parents you're choosing to breed.
 			for i in range(self.parents):
